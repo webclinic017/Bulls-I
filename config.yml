@@ -1,0 +1,28 @@
+general_info:
+  email:
+    sender_email: "subrat.plaksha@gmail.com"
+    recipients: ['subratsaxena9@gmail.com']
+    sender_email: "subrat.plaksha@gmail.com"
+  start_time: "09:00:00"
+  end_time: "15:30:00"
+  stock_selection_time: "09:05:00"
+  funds_utilization_per_day: 1000
+  stock_list_path: 'C:\Users\Subrat Mahim Saxena\Desktop\Algo Trading\ind_nifty100list.csv'
+  alice_blue:
+    user_id: '856664'
+    api_key: 'RqMITCPfcIAWjo0OOEmEixYD5JUnFDtI066rtqavS4mAsoXSEUdiZocrTpNR71iQFtmhySfTDA7WNP6OrbTHExAd9rriKu5YNqzZ495R5Z28rfu0lZgvskpVfsfBkOys'
+
+strategy: # [Conditions (list), Action (string), Fund % to utilise (int)]
+  test1: [[['rsi','>', 40], ['rsi_avg_chg','>',0.01]], 'BUY', 5] 
+  test2: [[['rsi_avg_chg', '>', 15]], 'BUY', 15]
+
+scorecard:
+  strategy:
+    score_bands: ['5-7','7-10','10-15','15-18','>18']
+    actions: ['Sell', 'Hold', 'Buy', 'Buy', 'Buy']
+    num_stocks: [2, 3, 4, 2, 3]
+    amounts: [0, 0, 0.2, 0.3, 0.5]
+
+backtest:
+  investment: 100000
+  period: 365
